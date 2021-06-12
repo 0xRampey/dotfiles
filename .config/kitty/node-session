@@ -1,0 +1,10 @@
+new_tab system
+launch zsh
+
+# Connect to node
+new_tab node
+launch ssh -t -p 7301 -J joel@yoda.hyperverge.co -L 8888:localhost:8888 -L 9000:localhost:9000 prudhvi@node5.local 'tmux a -t code'
+
+new_tab node-stats
+launch ssh -t -p 7301 -J joel@yoda.hyperverge.co -L 8889:localhost:8889 prudhvi@node5.local 'tmux a -t stats'
+
